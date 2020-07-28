@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace SeasideSouthPark
 {
@@ -33,6 +34,7 @@ namespace SeasideSouthPark
 
         private void formHome_Load(object sender, EventArgs e)
         {
+            
             hidePanels();
             pnlWelcome.Visible = true;
         }

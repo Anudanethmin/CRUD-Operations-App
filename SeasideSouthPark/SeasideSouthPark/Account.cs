@@ -22,11 +22,11 @@ namespace SeasideSouthPark
             uName = username;
             InitializeComponent();
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Downloads\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
             string qry = "Select FName,LName,Email,Phone,City,Country from tblUser where Username='" + uName + "'";
             SqlDataAdapter sda = new SqlDataAdapter(qry, con);
             DataSet ds = new DataSet();
-            sda.Fill(ds, "tblUser");
+            sda.Fill(ds);
 
             string firstname = ds.Tables[0].Rows[0][0].ToString();
             string lastname = ds.Tables[0].Rows[0][1].ToString();
@@ -92,7 +92,7 @@ namespace SeasideSouthPark
                 }
             }
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Downloads\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd = new SqlCommand("Update tblUser set ProImg(@Pic) where Username='" + uName + "'", con);
             MemoryStream stream = new MemoryStream();
 
@@ -115,7 +115,7 @@ namespace SeasideSouthPark
                 con.Close();
             }
 
-            SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Downloads\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
             SqlCommand command = new SqlCommand("Select ProImg from tblUser where Username='" + uName + "'", connect);
 
             SqlDataAdapter dp = new SqlDataAdapter(command);
@@ -334,7 +334,7 @@ namespace SeasideSouthPark
                 string currentpass = txtCurrentPass.Text;
                 string newpass = txtNewPass.Text;
 
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Downloads\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
                 string qry = "Update tblUser Set FName='"+fname+ "', LName='" + lname + "', Email='" + email + "', Phone='" + phone + "', City='" + city + "', Country='" + country + "', Password='" + newpass + "' Where Username ='" + uName + "'";
                 SqlCommand cmd = new SqlCommand(qry, con);
 
@@ -376,7 +376,7 @@ namespace SeasideSouthPark
                     txtNewPass.Text = "New Password";
                     txtNewPass.ForeColor = Color.Gray;
 
-                    SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
+                    SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Downloads\Documents\GitHub\CRUD-Operations-App\SeasideSouthPark\SeasideDB.mdf;Integrated Security=True;Connect Timeout=30");
                     string qry2 = "Select FName,LName,Email,Phone,City,Country from tblUser where Username='" + uName + "'";
                     SqlDataAdapter sda = new SqlDataAdapter(qry2, con2);
                     DataSet ds = new DataSet();
